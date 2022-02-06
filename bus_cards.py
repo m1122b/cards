@@ -1,7 +1,7 @@
 
 
 from faker import Faker 
-fake = Faker()
+fake = Faker('pl_PL')
 
 #print(fake.first_name())
 #print(fake.last_name())
