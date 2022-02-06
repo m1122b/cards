@@ -16,15 +16,31 @@ class Card:
         self.firm = firm
         self.position = position
         self.email = email
+
+        #Variable
+        #self._surname_len = 0
+        #self._name_len = 0
+
     def __str__(self):
         return f'{self.name} {self.surname} {self.email}'
+    def contact(self):
+        return print(f"Kontaktuję się z {self.name} {self.surname}; {self.position}; {self.email}.")
+    
+    @property
+    def sumlen(self):
+        self._namelen = len(self.name)
+        self._surnamelen = len(self.surname)
+        self._sumlen = len(self.name) + len(self.surname) + 1
+        return f'{self._namelen} {self._surnamelen} {self._sumlen}'
+    
+
     
 
 
 #card = Card(surname=fake.last_name(),name=fake.first_name(),firm=fake.company(),position=fake.job(),email=fake.email())
 #print(card)
 
-n = 10
+n = 2
 cards = []
 
 for _ in range(n):
@@ -65,4 +81,11 @@ for i in range(len(by_email)):
 
 print("\n")
 
+for i in range(len(cards)):
+    cards[i].contact()
+
+print("\n")
+
+for i in range(len(cards)):
+    print(cards[i].sumlen)
 
