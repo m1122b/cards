@@ -1,12 +1,13 @@
 
 from faker import Faker 
-fake = Faker()
+fake = Faker('pl_PL')
 
 #print(fake.first_name())
 #print(fake.last_name())
 #print(fake.company())
 #print(fake.job())
 #print(fake.email())
+#print(fake.phone_number())
 
 
 class Card:
@@ -23,6 +24,7 @@ class Card:
 
     def __str__(self):
         return f'{self.name} {self.surname} {self.email}'
+    
     def contact(self):
         return print(f"Kontaktuję się z {self.name} {self.surname}; {self.position}; {self.email}.")
     
@@ -88,4 +90,6 @@ print("\n")
 
 for i in range(len(cards)):
     print(cards[i].sumlen)
+
+
 
